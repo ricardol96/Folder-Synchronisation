@@ -1,4 +1,7 @@
 # Folder-Synchronisation
+If you don't have pytest installed simply install it using
+pip install pytest
+
 To use this program simply run the run_sync_folder.bat if using Windows or run run_sync_folder.sh if using Linux
 The launcher will prompt you to input the following arguments:
 
