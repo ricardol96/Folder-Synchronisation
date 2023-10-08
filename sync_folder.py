@@ -30,12 +30,15 @@ class SyncFolder:
     def main(self):
         try:
             while True:
+                print('Synchronization started.')
                 self.logging("Synchronization started.")
                 self.synchronization()
-                self.logging("Synchronization completed.")
+                print('Synchronization completed.')
+                self.logging('Synchronization completed.')
                 time.sleep(self.interval)
         except KeyboardInterrupt:
-            self.logging("Synchronization interrupted.")
+            print('Synchronization interrupted.')
+            self.logging('Synchronization interrupted.')
 
     def logging(self, message):
         with open(self.log_file, 'a', encoding='utf-8') as f:

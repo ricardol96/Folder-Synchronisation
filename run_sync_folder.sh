@@ -17,7 +17,8 @@ read interval
 pytest unit_test.py
 
 # Run the chmod command to make the script self-executable
-chmod +x run_unit_tests.sh
+chmod +x run_sync_folder.sh
 
 # Run the main script with user input as command-line arguments
 python sync_folder.py "$source" "$replica" "$log_file" "$interval"
+read -p "Press Enter to continue..."
