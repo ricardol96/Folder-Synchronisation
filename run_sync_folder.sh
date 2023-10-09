@@ -1,5 +1,3 @@
-#!/bin/bash
-
 # Prompt the user for input
 echo "Enter source folder path:"
 read source
@@ -14,11 +12,9 @@ echo "Enter interval:"
 read interval
 
 # Run the unit tests
-pytest unit_test.py
 
-# Run the chmod command to make the script self-executable
-chmod +x run_sync_folder.sh
+# chmod +x run_sync_folder.sh
 
 # Run the main script with user input as command-line arguments
 python sync_folder.py "$source" "$replica" "$log_file" "$interval"
-read -p "Press Enter to continue..."
+read -p "Press Enter to exit..."

@@ -82,8 +82,12 @@ class SyncFolder:
         # Removed files
         for file in deleted_files:
             replica_file_path = os.path.join(self.replica, file)
-            os.remove(replica_file_path)
+            try:
+                os.remove(replica_file_path)
+            except PermissionError: # in case a certain file is open while sync is trying to delete it from replica folder
+                self.logging(f'PermissionError: Unable to delete {replica_file_path}.')
             self.logging(f"File Removed: {replica_file_path}")
+
 
     def is_modified(self, file):
         # check if md5 hash has changed between source and replica files
